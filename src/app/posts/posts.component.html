@@ -1,0 +1,61 @@
+<div class="col-md-11 float-left offset-1 main">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Body</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let post of posts[0]">
+            
+            <td><a href="javascript:;" (click)="openModalDialog($event)" [attr.data_userId]="post.userId" [attr.data_postId]="post.id" id="{{post.id}}">{{post.title}}</a></td>
+            <td>
+              {{post.body}}<br/>
+              <p class="tag-name float-left" *ngFor="let chkVal of userTags; let i = index ">{{chkVal}}</p>
+            </td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div id="modalRegister" class="modal" role="dialog" [ngStyle]="{'display':display}">
+      <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+              
+              <div class="modal-header">
+                <h5 class="modal-title">Add Tag</h5>  
+                <button type="button" class="close" (click)="closeModalDialog($event)">&times;</button>
+                  
+              </div>
+              <div class="modal-body">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Search Tag:</label>
+                    <input type="text" id="search" class="form-control" name="search" (change)="onChange($event)"/>
+                  </div>
+                  
+                  <ul class="list-group tag-ul" *ngFor="let tagValue of tags; let i = index ">
+                      <li class="list-group-item tag-li">
+                        <label class="checkbox-inline tag-label">
+                          <!--<input type="checkbox" id="checkbox_{{i}}"  name="checkbox" value="{{tagValue.tag}}" #checkbox_reference_{{i}}="ngModel" ngModel/> -->
+                          <input type="checkbox" id="checkbox_{{i}}"  name="checkbox" value="{{tagValue.tag}}" (change)="onChangeCheckbox($event)"/> 
+                          {{tagValue.tag}}
+                        </label>
+                       
+                      </li>
+                  </ul>
+                  
+                  
+                </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="submit" class="btn btn-primary" (click)="onSaveTags($event)">Save</button>
+              </div>
+            
+          </div>
+      </div>
+  </div>

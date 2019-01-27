@@ -1,0 +1,18 @@
+.tag-ul{
+    margin-bottom: 15px;
+}
+.tag-li{
+    margin-bottom: 15px;
+    padding: 2px;
+    padding-left: 10px;
+}
+.tag-label{
+    margin-bottom: 0px;
+}
+
+.main{
+    padding-left: 23px;
+}
+thead tr{
+    background: #f5f5f5;
+}

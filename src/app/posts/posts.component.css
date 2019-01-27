@@ -1,0 +1,30 @@
+.tag-ul{
+    margin-bottom: 15px;
+}
+.tag-li{
+    margin-bottom: 15px;
+    padding: 2px;
+    padding-left: 10px;
+}
+.tag-label{
+    margin-bottom: 0px;
+}
+.main{
+    padding-left: 23px;
+}
+.tag-name{
+    padding: 5px;
+    background: #4972ce;
+    border-radius: 5%;
+    color: #fff;
+    margin-right: 5px;
+}
+.modalHide{
+    display: none;
+}
+.modalShow{
+    display: block;
+}
+thead tr{
+    background: #f5f5f5;
+}
